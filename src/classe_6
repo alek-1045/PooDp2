@@ -1,0 +1,54 @@
+interface IConversaoDeUnidadesDeTempo {
+    _minutos: number,
+    _mesdias: number,
+    _horaminutos: number,
+    _hora: number,
+    _diahoras: number, 
+    _anos: number
+}
+
+class ConversaoDeUnidadesDeTempo {
+     constructor(
+        private _minutos: number,
+        private _mesdias: number,
+        private _hora: number,
+        private _diahoras: number, 
+        private _anos: number,
+    ) {}
+
+    static fatory({_minutos, _mesdias, _hora, _diahoras, _anos}: IConversaoDeUnidadesDeTempo){
+        return new ConversaoDeUnidadesDeTempo(_minutos,_mesdias, _hora, _diahoras, _anos)
+    }
+
+    static Minutos(minutos: number) {
+        return new minutos * 60
+    }
+
+    static Hora(hora: number) {
+        return hora * 60
+    }
+
+    static diaHoras(diaHoras: number) {
+        return diaHoras * 24
+    }
+
+    static semanaDias(semanaDias: number) {
+        return semanaDias * 7
+    }
+
+    static mesDias(mesDias: number) {
+        return mesDias * 30
+    }
+
+    static anoDias(anoDias: number) {
+        return anoDias * 365.25
+    }
+}
+const Conversao1 = new ConversaoDeUnidadesDeTempo(0, 0, 0, 0)
+
+console.log(Conversao1.Minuto(8));
+console.log(Conversao1.Hora(1));
+console.log(Conversao1.diaHoras(9));
+console.log(Conversao1.semanaDias(10));
+console.log(Conversao1.mesDias(8));
+console.log(Conversao1.anoDias(12));
